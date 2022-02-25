@@ -15,7 +15,7 @@ public class cazadores extends aliens{
     public cazadores() {
     }
 
-    public cazadores(int humanos, String nombre, int edad, String raza, boolean amen) {
+    public cazadores(int humanos, String nombre, int edad, raza raza, boolean amen) {
         super(nombre, edad, raza, amen);
         this.humanos = humanos;
     }

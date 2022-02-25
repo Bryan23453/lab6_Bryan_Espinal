@@ -18,7 +18,7 @@ public class exploradores extends aliens{
     public exploradores() {
     }
 
-    public exploradores(planeta plafav, String nombre, int edad, String raza, boolean amen) {
+    public exploradores(planeta plafav, String nombre, int edad, raza raza, boolean amen) {
         super(nombre, edad, raza, amen);
         this.plafav = plafav;
     }

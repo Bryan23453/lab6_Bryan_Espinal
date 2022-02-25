@@ -15,7 +15,7 @@ public class abduzcan extends aliens{
     public abduzcan() {
     }
 
-    public abduzcan(int animabdu, String nombre, int edad, String raza, boolean amen) {
+    public abduzcan(int animabdu, String nombre, int edad, raza raza, boolean amen) {
         super(nombre, edad, raza, amen);
         this.animabdu = animabdu;
     }

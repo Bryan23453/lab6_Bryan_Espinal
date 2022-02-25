@@ -17,7 +17,7 @@ public class conquistadores extends aliens{
     public conquistadores() {
     }
 
-    public conquistadores(String nombre, int edad, String raza, boolean amen) {
+    public conquistadores(String nombre, int edad, raza raza, boolean amen) {
         super(nombre, edad, raza, amen);
     }
 

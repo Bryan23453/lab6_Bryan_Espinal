@@ -12,13 +12,13 @@ package lab6p2_bryan_espinal_.pkg12141139;
 public class aliens {
     String nombre;
     int edad;
-    String raza;
+    raza raza;
     boolean amen;
 
     public aliens() {
     }
 
-    public aliens(String nombre, int edad, String raza, boolean amen) {
+    public aliens(String nombre, int edad, raza raza, boolean amen) {
         this.nombre = nombre;
         this.edad = edad;
         this.raza = raza;
@@ -41,11 +41,11 @@ public class aliens {
         this.edad = edad;
     }
 
-    public String getRaza() {
+    public raza getRaza() {
         return raza;
     }
 
-    public void setRaza(String raza) {
+    public void setRaza(raza raza) {
         this.raza = raza;
     }
 
