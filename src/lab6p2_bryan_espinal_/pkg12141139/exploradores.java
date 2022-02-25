@@ -41,7 +41,7 @@ public class exploradores extends aliens{
 
     @Override
     public String toString() {
-        return super.toString()+ " exploradores{" + "plan=" + plan + ", plafav=" + plafav + '}';
+        return super.toString();
     }
     
 }

@@ -64,8 +64,8 @@ public class planeta {
         return alie;
     }
 
-    public void setAlie(ArrayList<aliens> alie) {
-        this.alie = alie;
+    public void setAlie(aliens alie) {
+        this.alie.add(alie);
     }
 
     @Override

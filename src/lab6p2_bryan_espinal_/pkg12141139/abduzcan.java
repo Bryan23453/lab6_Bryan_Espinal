@@ -30,7 +30,7 @@ public class abduzcan extends aliens{
 
     @Override
     public String toString() {
-        return super.toString()+" abduzcan{" + "animabdu=" + animabdu + '}';
+        return super.toString();
     }
     
     

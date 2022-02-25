@@ -31,7 +31,7 @@ public class conquistadores extends aliens{
 
     @Override
     public String toString() {
-        return super.toString()+" conquistadores{" + "plan=" + plan + '}';
+        return super.toString();
     }
     
     

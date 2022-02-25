@@ -11,6 +11,7 @@ package lab6p2_bryan_espinal_.pkg12141139;
  */
 public class cazadores extends aliens{
     int humanos;
+    planeta plan; 
 
     public cazadores() {
     }
@@ -28,9 +29,17 @@ public class cazadores extends aliens{
         this.humanos = humanos;
     }
 
+    public planeta getPlan() {
+        return plan;
+    }
+
+    public void setPlan(planeta plan) {
+        this.plan = plan;
+    }
+
     @Override
     public String toString() {
-        return super.toString()+" cazadores{" + "humanos=" + humanos + '}';
+        return super.toString();
     }
     
     
