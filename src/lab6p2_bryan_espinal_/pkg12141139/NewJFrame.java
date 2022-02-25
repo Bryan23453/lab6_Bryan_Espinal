@@ -118,12 +118,6 @@ public class NewJFrame extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jp_colorear.addChangeListener(new javax.swing.event.ChangeListener() {
-            public void stateChanged(javax.swing.event.ChangeEvent evt) {
-                jp_colorearStateChanged(evt);
-            }
-        });
-
         jLabel9.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel9.setText("Planetas");
 
@@ -136,6 +130,11 @@ public class NewJFrame extends javax.swing.JFrame {
         Agua.setText("Agua");
 
         planetaania.setText("añadir planeta");
+        planetaania.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                planetaaniaMouseClicked(evt);
+            }
+        });
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel1.setText("Razas");
@@ -663,9 +662,9 @@ public class NewJFrame extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jp_colorearStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_jp_colorearStateChanged
+    private void planetaaniaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_planetaaniaMouseClicked
         
-    }//GEN-LAST:event_jp_colorearStateChanged
+    }//GEN-LAST:event_planetaaniaMouseClicked
 
     /**
      * @param args the command line arguments
