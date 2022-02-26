@@ -933,8 +933,14 @@ public class principal extends javax.swing.JFrame {
     }//GEN-LAST:event_aniarazaMouseClicked
 
     private void exguaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_exguaMouseClicked
-        
-        boolean a=false;
+        boolean ta=true;
+        for (aliens alii : ali) {
+            if (alii.getNombre().equalsIgnoreCase(explonom.getText())) {
+               ta=false; 
+            }
+        }
+        if (ta==true) {
+           boolean a=false;
         if (amenaza.isSelected()) {
             a=true;
         }
@@ -943,6 +949,11 @@ public class principal extends javax.swing.JFrame {
         ali.add(ex);
         pla.get(exhabita.getSelectedIndex()).setAlie(ali.get(ali.size()-1));
         JOptionPane.showMessageDialog(rootPane, "Agregado Exitosamente");
+        }else{
+            JOptionPane.showMessageDialog(rootPane, "No Puede haber 2 aliens con el mismo nombre");
+        }
+        
+        
     }//GEN-LAST:event_exguaMouseClicked
 
     private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
