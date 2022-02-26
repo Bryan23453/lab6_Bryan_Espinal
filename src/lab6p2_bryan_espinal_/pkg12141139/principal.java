@@ -7,6 +7,8 @@ package lab6p2_bryan_espinal_.pkg12141139;
 
 import java.util.ArrayList;
 import javax.swing.DefaultListModel;
+import javax.swing.tree.DefaultMutableTreeNode;
+import javax.swing.tree.DefaultTreeModel;
 
 /**
  *
@@ -27,7 +29,29 @@ public class principal extends javax.swing.JFrame {
         exhabita.setModel(planetaaa.getModel());
         cazplan.setModel(planetaaa.getModel());
         cazplan.setModel(planetaaa.getModel());
-        combopla.addItem(pla.get(pla.size()-1).toString());
+        combopla.setModel(planetaaa.getModel());
+        raza.add(new raza(pla.get(0),"cabre"));
+        raza.add(new raza(pla.get(1),"pilocus"));
+        pla.get(0).setAlie(new exploradores(pla.get(0),"paco",20,raza.get(0),true));
+        pla.get(0).setAlie(new exploradores(pla.get(0),"carlos",10,raza.get(0),false));
+        pla.get(1).setAlie(new exploradores(pla.get(0),"bulub",20,raza.get(1),true));
+        pla.get(1).setAlie(new exploradores(pla.get(0),"cacoloc",20,raza.get(1),true));
+            DefaultTreeModel modelo = (DefaultTreeModel)treealiens.getModel();
+            DefaultMutableTreeNode root = (DefaultMutableTreeNode)modelo.getRoot();
+            DefaultMutableTreeNode plaa = (DefaultMutableTreeNode)modelo.getRoot();
+            plaa= new DefaultMutableTreeNode(pla.get(0));
+            DefaultMutableTreeNode plaa2 = (DefaultMutableTreeNode)modelo.getRoot();
+            plaa2= new DefaultMutableTreeNode(pla.get(1));
+            DefaultMutableTreeNode alie = (DefaultMutableTreeNode)modelo.getRoot();
+            ArrayList <aliens> aa=new ArrayList();
+            aa=pla.get(1).getAlie();
+            for (int i = 0; i < 2; i++) {
+                alie= new DefaultMutableTreeNode(pla.get(1).getAlie());
+                plaa.add(alie);
+            }
+            root.add(plaa);
+            root.add(plaa2);
+            modelo.reload();
     }
     ArrayList <planeta> pla= new ArrayList();
     ArrayList <raza> raza= new ArrayList();
@@ -112,7 +136,7 @@ public class principal extends javax.swing.JFrame {
         jPanel6 = new javax.swing.JPanel();
         planetaaa = new javax.swing.JComboBox<>();
         jScrollPane5 = new javax.swing.JScrollPane();
-        jTree1 = new javax.swing.JTree();
+        treealiens = new javax.swing.JTree();
         jScrollPane6 = new javax.swing.JScrollPane();
         aliens = new javax.swing.JList<>();
         jLabel20 = new javax.swing.JLabel();
@@ -163,7 +187,7 @@ public class principal extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel1.setText("Razas");
 
-        jLabel2.setText("Planeta");
+        jLabel2.setText("Planeta primordial");
 
         jLabel3.setText("nombre");
 
@@ -183,9 +207,7 @@ public class principal extends javax.swing.JFrame {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createSequentialGroup()
                         .addComponent(jLabel10)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jLabel2)
-                        .addGap(222, 222, 222))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createSequentialGroup()
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(planetaania, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -202,7 +224,8 @@ public class principal extends javax.swing.JFrame {
                                     .addComponent(jLabel3)
                                     .addComponent(combopla, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(nombreraza, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(aniaraza, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                    .addComponent(aniaraza, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabel2))))
                         .addGap(90, 90, 90))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(26, 26, 26)
@@ -574,7 +597,9 @@ public class principal extends javax.swing.JFrame {
             }
         });
 
-        jScrollPane5.setViewportView(jTree1);
+        javax.swing.tree.DefaultMutableTreeNode treeNode1 = new javax.swing.tree.DefaultMutableTreeNode("root");
+        treealiens.setModel(new javax.swing.tree.DefaultTreeModel(treeNode1));
+        jScrollPane5.setViewportView(treealiens);
 
         jScrollPane6.setViewportView(aliens);
 
@@ -720,7 +745,7 @@ public class principal extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jp_colorear, javax.swing.GroupLayout.DEFAULT_SIZE, 407, Short.MAX_VALUE)
+            .addComponent(jp_colorear)
         );
 
         pack();
@@ -920,7 +945,6 @@ public class principal extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField3;
     private javax.swing.JTextField jTextField4;
     private javax.swing.JTextField jTextField5;
-    private javax.swing.JTree jTree1;
     private javax.swing.JTabbedPane jp_colorear;
     private javax.swing.JTextField nombreraza;
     private javax.swing.JComboBox<String> planetaaa;
@@ -928,5 +952,6 @@ public class principal extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> razaaa;
     private javax.swing.JSpinner tamanio;
     private javax.swing.JSpinner temperatura;
+    private javax.swing.JTree treealiens;
     // End of variables declaration//GEN-END:variables
 }
