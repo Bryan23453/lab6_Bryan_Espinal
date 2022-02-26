@@ -25,7 +25,8 @@ public class principal extends javax.swing.JFrame {
         pla.add(new planeta("kepler",false,100,10)); 
         planetaaa.addItem(pla.get(0).toString());
         planetaaa.addItem(pla.get(1).toString());
-        explafab.setModel(planetaaa.getModel());
+        explafab.addItem(pla.get(0).toString());
+        explafab.addItem(pla.get(1).toString());
         exhabita.setModel(planetaaa.getModel());
         cazplan.setModel(planetaaa.getModel());
         cazplan.setModel(planetaaa.getModel());
@@ -35,6 +36,11 @@ public class principal extends javax.swing.JFrame {
         conpla.setModel(planetaaa.getModel());
         raza.add(new raza(pla.get(0),"cabre"));
         raza.add(new raza(pla.get(1),"pilocus"));
+        razaaa.addItem(raza.get(0).toString());
+        razaaa.addItem(raza.get(1).toString());
+        exraza.setModel(razaaa.getModel());
+        cazraza.setModel(razaaa.getModel());
+        conraz.setModel(razaaa.getModel());
         pla.get(0).setAlie(new exploradores(pla.get(0),"paco",20,raza.get(0),true));
         pla.get(0).setAlie(new exploradores(pla.get(0),"carlos",10,raza.get(0),false));
         pla.get(1).setAlie(new exploradores(pla.get(0),"bulub",20,raza.get(1),true));
@@ -648,16 +654,11 @@ public class principal extends javax.swing.JFrame {
 
         jLabel23.setText("raza");
 
-        jList6.setModel(new javax.swing.AbstractListModel<String>() {
-            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
-            public int getSize() { return strings.length; }
-            public String getElementAt(int i) { return strings[i]; }
-        });
         jScrollPane7.setViewportView(jList6);
 
         jScrollPane8.setViewportView(a);
 
-        jButton5.setText("jButton5");
+        jButton5.setText(">");
 
         jLabel24.setText("Humano Atrapados");
 
@@ -805,11 +806,7 @@ public class principal extends javax.swing.JFrame {
         }
         pla.add(new planeta(Nombre.getText(),aa,(Integer)tamanio.getValue(),(Integer)temperatura.getValue()));
         planetaaa.addItem(new planeta(Nombre.getText(),aa,(Integer)tamanio.getValue(),(Integer)temperatura.getValue()).toString());
-        explafab.setModel(planetaaa.getModel());
-        exhabita.setModel(planetaaa.getModel());
-        cazplan.setModel(planetaaa.getModel());
-        cazplan.setModel(planetaaa.getModel());
-        combopla.addItem(pla.get(pla.size()-1).toString());
+        explafab.addItem(new planeta(Nombre.getText(),aa,(Integer)tamanio.getValue(),(Integer)temperatura.getValue()).toString());
         DefaultListModel tab= new DefaultListModel();
         for (planeta t : pla) {
             tab.addElement(t);
@@ -870,7 +867,7 @@ public class principal extends javax.swing.JFrame {
         cazadores caz=new cazadores((Integer)cazhuma.getValue(),caznom.getText(),(Integer)cazeda1.getValue(),raza.get(cazraza.getSelectedIndex()),aa);
         caz.setPlan(pla.get(cazplan.getSelectedIndex()));
         ali.add(caz);
-        
+        pla.get(cazplan.getSelectedIndex()).setAlie(caz);
     }//GEN-LAST:event_jButton3MouseClicked
 
     private void conguarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_conguarMouseClicked
@@ -879,7 +876,9 @@ public class principal extends javax.swing.JFrame {
             tr=true;
         }
         conquistadores con=new conquistadores(conom.getText(),(Integer)conedad.getValue(),raza.get(conraz.getSelectedIndex()),tr);
-        
+        con.setPlan(pla.get(conplan.getSelectedIndex()));
+        ali.add(con);
+        pla.get(cazplan.getSelectedIndex()).setAlie(con);
     }//GEN-LAST:event_conguarMouseClicked
 
     private void jButton2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton2MouseClicked
@@ -887,6 +886,8 @@ public class principal extends javax.swing.JFrame {
         tab.addElement(pla.get(conplan.getSelectedIndex()));
         planett.add(pla.get(conplan.getSelectedIndex()));
         conplan2.setModel(tab);
+        
+        
     }//GEN-LAST:event_jButton2MouseClicked
 
     /**

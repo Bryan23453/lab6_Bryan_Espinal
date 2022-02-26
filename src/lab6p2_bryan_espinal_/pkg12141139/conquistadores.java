@@ -25,8 +25,8 @@ public class conquistadores extends aliens{
         return plan;
     }
 
-    public void setPlan(ArrayList<planeta> plan) {
-        this.plan = plan;
+    public void setPlan(planeta plan) {
+        this.plan.add(plan);
     }
 
     @Override
